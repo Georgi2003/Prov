@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MagnitudeController;
+use App\Http\Middleware\IsAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/magnitudes', 'App\Http\Controllers\MagnitudeController');
-
-Route::resource('/units', 'App\Http\Controllers\UnitController');
-
 Route::resource('/formulas', 'App\Http\Controllers\FormulaController');
 
 Route::get('/tasks', 'App\Http\Controllers\TaskController@index');
@@ -35,3 +32,13 @@ Route::post('/parameters/{magnitude_id}', 'App\Http\Controllers\TaskController@p
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware([IsAdmin::class])->group(function () {
+	Route::resource('/users', 'App\Http\Controllers\UserController');
+	Route::resource('/magnitudes', 'App\Http\Controllers\MagnitudeController');
+	Route::resource('/units', 'App\Http\Controllers\UnitController');
+});
+
+
+
+

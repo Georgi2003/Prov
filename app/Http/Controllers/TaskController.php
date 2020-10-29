@@ -73,7 +73,6 @@ class TaskController extends Controller
             else if($mathFormula[$i] == '-') 
             {
                 $lastMathOperation = '-';
-                
             }           
             else if($mathFormula[$i] == '/') {
                 $lastMathOperation = '/';

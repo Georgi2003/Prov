@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Magnitude extends Model
 {
-    protected $table = 'magnitudes'; 
-    protected $primaryKei = 'id';
     public $incrementing = true;
     public $timestamps = false;
 
@@ -18,6 +16,10 @@ class Magnitude extends Model
     public function units()
     {
     	return $this->hasMany('App\Models\Unit');
-    	return $this->hasMany('App\Models\Formula');
+    }
+
+    public function formulas()
+    {
+        return $this->hasMany('App\Models\Formula');
     }
 }

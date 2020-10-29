@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Formula extends Model
 {
-    protected $primaryKei = 'id';
     public $timestamps = false;
 
     use SoftDeletes;

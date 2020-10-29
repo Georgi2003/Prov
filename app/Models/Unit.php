@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Unit extends Model
-{ 
-    protected $primaryKei = 'id';
+{
     public $timestamps = false;
 
     use SoftDeletes;

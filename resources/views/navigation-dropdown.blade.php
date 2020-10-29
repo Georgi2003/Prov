@@ -19,6 +19,7 @@
                     <x-jet-nav-link href="{{ url('tasks') }}">
                         Решаване на задачи
                     </x-jet-nav-link>
+
                     @if(\Auth::user()->isAdmin())
                         <x-jet-nav-link href="{{ url('magnitudes') }}">
                             Величини
@@ -32,6 +33,12 @@
                     <x-jet-nav-link href="{{ url('formulas') }}">
                         Формули
                     </x-jet-nav-link>
+
+                    @if(\Auth::user()->isAdmin())
+                        <x-jet-nav-link href="{{ url('admins') }}">
+                            Админ
+                        </x-jet-nav-link>
+                    @endif
                 </div>
             </div>
 
