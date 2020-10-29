@@ -35,7 +35,7 @@
                     </x-jet-nav-link>
 
                     @if(\Auth::user()->isAdmin())
-                        <x-jet-nav-link href="{{ url('admins') }}">
+                        <x-jet-nav-link href="{{ url('users') }}">
                             Админ
                         </x-jet-nav-link>
                     @endif
