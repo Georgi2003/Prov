@@ -27,8 +27,9 @@ class UserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user = User::find($id);
         return view('admins.edit', [
             'user' => $user    
         ]);
@@ -41,8 +42,13 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->role = $request['role'];
+        
+        $user->save();
+
+        return redirect('/users')->with('success', 'Успешно обновихте ролята!');
     }
 }

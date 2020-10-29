@@ -29,7 +29,7 @@
 					
 					<td>
 						<button>
-							<a style = "text-decoration: none; color: black;" href = "{{ url('admins') }}/{{ $user->id }}/edit">Актуализирай</a>
+							<a style = "text-decoration: none; color: black;" href = "{{ url('users') }}/{{ $user->id }}/edit">Актуализирай</a>
 						</button>
 					</td>
 				@endif

@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 {{$user->name}}
-    <form method="post" action = "/admins/{{ $user->id }}"> 
+    <form method="post" action = "/users/{{ $user->id }}"> 
         {{ csrf_field() }}
         @method('PUT')
 
@@ -13,7 +13,7 @@
         <div class="dropdown">
             Промени роля
             <br>
-            <button onclick="myFunction()" class="dropbtn">Избери роля</button>
+            <button onclick="myFunction()" class="dropbtn">Роля: {{$user->role}}</button>
             <div id="myDropdown" class="dropdown-content">
                 <input type="text" placeholder="Търсене..." id="myInput" onkeyup="filterFunction()">
                 <div> 
